@@ -1,0 +1,11 @@
+services:
+  server:
+    image: "mc_java_server:latest"
+    ports:
+      - "25565:25565"
+
+  onedrive:
+    image: "mc_java_onedrive:latest"
+    # These are the -it flags in docker run so it doesn't exit.
+    stdin_open: true
+    tty: true
