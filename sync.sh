@@ -7,7 +7,7 @@ backup="$(date +%Y%m%d%H%M)_java_server_backup.zip"
 zip -r "${backup}" "${1}"
 rm -r "${1}"
 
-onedrive --synchronize --upload-only
+onedrive --synchronize --upload-only --no-remote-delete
 
 rm *
 
