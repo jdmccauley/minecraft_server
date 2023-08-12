@@ -1,9 +1,7 @@
 ARG SERVER_ZIP="JAVA_SERVER.zip"
 ARG TARGET="server"
 
-FROM debian:bookworm-slim as server
-RUN apt-get update && \
-    apt-get install -y vim openjdk-17-jre zip
+FROM openjdk:22-jdk-bookworm as server
 WORKDIR /mc/JAVA_SERVER
 COPY ${SERVER_ZIP} /mc/
 RUN unzip /mc/JAVA_SERVER.zip -d /mc
